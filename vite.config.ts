@@ -7,7 +7,7 @@ import { defineConfig } from 'vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), vueJsx()],
-  // 靜態路徑
+  // 靜態
   base: '/',
   resolve: {
     alias: {
