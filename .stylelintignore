@@ -2,5 +2,5 @@ dist
 
 # Unknown word (CssSyntaxError)Stylelint(CssSyntaxError)
 *.*  
-!*.css
-!*.scss
+# !*.css
+# !*.scss
