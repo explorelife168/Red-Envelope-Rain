@@ -4,7 +4,6 @@
   padding-bottom: calc(64% / 603 * 50);
   background-size: 100% auto;
   background-repeat: no-repeat;
-
   transform: translateX(-50%);
   left: 50%;
   .countdown-bar-blood {
@@ -16,6 +15,10 @@
     border-radius: 40px;
     background: var(--countdown-bar-blood-1);
     background: var(--countdown-bar-blood-2);
+    .text {
+      position: absolute;
+      // display: inline-block;
+    }
   }
   .countdown-bar-cover {
     position: absolute;
