@@ -1,11 +1,4 @@
-.main-wrap {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-
-    @media (min-width: 576px) {
-        margin: 0 auto;
-        width: 576px;
-    }
+.home-wrap {
+  width: 100%;
+  height: 100%;
 }
