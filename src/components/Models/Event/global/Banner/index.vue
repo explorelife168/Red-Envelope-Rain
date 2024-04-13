@@ -1,5 +1,9 @@
 <template>
   <div class="banner-container">
+    <div class="banner">
+      <div class="border"></div>
+    </div>
+    <div class="banner-block"></div>
     <div
       class="logo"
       :style="{

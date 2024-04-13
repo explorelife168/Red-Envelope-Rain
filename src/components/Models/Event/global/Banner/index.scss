@@ -1,19 +1,51 @@
 .banner-container {
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 50px;
-  background: var(--banner);
-  background: var(--banner-2);
-  z-index: 10;
   @media (min-width: 576px) {
     height: 60px;
   }
+  .banner {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background: var(--banner);
+    background: var(--banner-2);
+    z-index: 11;
+    @media (min-width: 576px) {
+      height: 60px;
+    }
+    .border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--banner-border);
+      @media (min-width: 576) {
+        height: 4px;
+      }
+    }
+  }
+  .banner-block {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    z-index: 10;
+    @media (min-width: 576px) {
+      height: 60px;
+    }
+  }
+
   .logo {
     position: absolute;
+    top: 0;
     width: 80px;
+    padding-bottom: calc(80px / 700 * 400);
     background-size: 100% auto;
     background-repeat: no-repeat;
     margin-left: 10px;
+    z-index: 11;
 
     @media (min-width: 576px) {
       width: 100px;
