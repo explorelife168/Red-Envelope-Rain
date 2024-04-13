@@ -1,0 +1,28 @@
+.countdown-bar-container {
+  position: relative;
+  width: 64%;
+  padding-bottom: calc(64% / 603 * 50);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+  transform: translateX(-50%);
+  left: 50%;
+  .countdown-bar-blood {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    padding-bottom: calc(100% / 602 * 58);
+    border-radius: 40px;
+    background: var(--countdown-bar-blood-1);
+    background: var(--countdown-bar-blood-2);
+  }
+  .countdown-bar-cover {
+    position: absolute;
+    top: -1%;
+    width: 100%;
+    padding-bottom: calc(100% / 613 * 60);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+}
