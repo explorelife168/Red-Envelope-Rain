@@ -1,31 +1,44 @@
 .countdown-bar-container {
   position: relative;
   width: 64%;
-  padding-bottom: calc(64% / 603 * 50);
-  background-size: 100% auto;
+  padding-bottom: calc(64% / 603 * 60);
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   transform: translateX(-50%);
+  border-radius: 50rem;
   left: 50%;
+  overflow: hidden;
+
   .countdown-bar-blood {
     position: absolute;
-    top: 0%;
-    left: 0;
-    width: 100%;
-    padding-bottom: calc(100% / 602 * 58);
-    border-radius: 40px;
-    background: var(--countdown-bar-blood-1);
-    background: var(--countdown-bar-blood-2);
-    .text {
-      position: absolute;
-      // display: inline-block;
-    }
+    height: 100%;
+    right: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
   .countdown-bar-cover {
     position: absolute;
-    top: -1%;
     width: 100%;
-    padding-bottom: calc(100% / 613 * 60);
-    background-size: 100% auto;
+    height: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
+  }
+  .content {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    top: 50%;
+    color: var(--countdown-text-color);
+    @media (min-width: 576px) {
+      font-size: 1rem;
+    }
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
+    .high-light {
+      color: var(--countdown-high-light-text-color);
+      font-weight: bold;
+    }
   }
 }
