@@ -3,14 +3,14 @@
     <div
       class="title"
       :style="{
-        'background-image': `url(${title})`
+        'background-image': `url(${activity_title})`
       }"
     ></div>
   </div>
 </template>
 
 <script setup lang="ts">
-import title from '@/assets/images/title.png'
+import activity_title from '@/assets/images/activity_title.png'
 </script>
 <style scoped lang="scss">
 @import './index.scss';
