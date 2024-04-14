@@ -36,6 +36,9 @@
     @media (max-width: 480px) {
       font-size: 0.8rem;
     }
+    @media (max-width: 375px) {
+      font-size: 0.7rem;
+    }
     .high-light {
       color: var(--countdown-high-light-text-color);
       font-weight: bold;

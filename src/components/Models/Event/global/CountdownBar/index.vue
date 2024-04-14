@@ -30,15 +30,18 @@ import countdown_bar from '@/assets/images/countdown_bar.png'
 import countdown_bg from '@/assets/images/countdown_bg.png'
 import countdown_cover from '@/assets/images/countdown_cover.png'
 import { useCounterStore } from '@/stores/counter'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const useStore = useCounterStore()
-const gettersCountDownName = computed(() => useStore.gettersCountDownName)
-const gameStartTime = computed(() => useStore.gettersConvertGameStartTime)
-const gameEndTime = computed(() => useStore.gettersConvertGameEndTime)
 
 const countdownStatus = ref('')
 const percentage = ref()
+const countdownInterval = ref()
+const progressInterval = ref()
+
+const gettersCountDownName = computed(() => useStore.gettersCountDownName)
+const gameStartTime = computed(() => useStore.gettersConvertGameStartTime)
+const gameEndTime = computed(() => useStore.gettersConvertGameEndTime)
 
 const countdownGameEndTime = () => {
   const currentTime = new Date().getTime()
@@ -61,21 +64,23 @@ const countdownGameEndTime = () => {
 
 const progressPercentage = () => {
   const currentTime = gameEndTime.value - new Date().getTime()
-  console.log(currentTime)
   const gameTime = gameEndTime.value - gameStartTime.value
-  console.log(gameTime)
   percentage.value = (currentTime / gameTime) * 100
 }
 
 onMounted(() => {
   countdownGameEndTime()
   progressPercentage()
-  setInterval(() => {
+  countdownInterval.value = setInterval(() => {
     countdownGameEndTime()
   }, 1000)
-  setInterval(() => {
+  progressInterval.value = setInterval(() => {
     progressPercentage()
   }, 1000)
+})
+onBeforeUnmount(() => {
+  clearInterval(countdownInterval.value)
+  clearInterval(progressInterval.value)
 })
 </script>
 
