@@ -56,7 +56,6 @@ class RedEnvelopeDropCanvasClass {
 
   play() {
     const minDelay = 700
-
     let lastTime = performance.now()
     let elapsedTime = 0
 
@@ -70,10 +69,8 @@ class RedEnvelopeDropCanvasClass {
         this.fallAnimation()
         elapsedTime = 0
       }
-
       requestAnimationFrame(dropRedEnvelope)
     }
-
     requestAnimationFrame(dropRedEnvelope)
   }
 }
