@@ -1,7 +1,7 @@
 .countdown-bar-container {
   position: relative;
-  width: 64%;
-  padding-bottom: calc(64% / 603 * 60);
+  width: 63%;
+  padding-bottom: calc(63% / 603 * 60);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   transform: translateX(-50%);
@@ -37,7 +37,7 @@
       font-size: 0.8rem;
     }
     @media (max-width: 375px) {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
     }
     .high-light {
       color: var(--countdown-high-light-text-color);
