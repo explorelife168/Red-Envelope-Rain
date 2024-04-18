@@ -10,7 +10,7 @@
     width: 100%;
     height: 50px;
     background: var(--banner);
-    background: var(--banner-2);
+    // background: var(--banner-2);
     z-index: 11;
     @media (min-width: 576px) {
       height: 60px;
@@ -22,8 +22,63 @@
       width: 100%;
       height: 3px;
       background: var(--banner-border);
+
       @media (min-width: 576) {
         height: 4px;
+      }
+    }
+    .logo {
+      position: absolute;
+      top: 50%;
+      width: 97px;
+      padding-bottom: calc(97px / 97 * 50);
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      z-index: 11;
+      transform: translateY(-50%);
+      @media (min-width: 576px) {
+        width: 100px;
+      }
+    }
+    .user-info {
+      position: absolute;
+      right: 216px;
+      top: calc(50% - 1.5px);
+      width: 16px;
+      padding-bottom: calc(16px / 65 * 65);
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      z-index: 11;
+      transform: translateY(-50%);
+      @media (min-width: 576px) {
+        right: 250px;
+      }
+      .user-info-id {
+        position: absolute;
+        width: 155px;
+        text-align: center;
+        color: var(--banner-text-color);
+        font-size: 12px;
+        font-family: 'PingFang SC', sans-serif;
+        font-weight: 500;
+        span {
+          font-size: 12px;
+          font-family: 'Arial Black', sans-serif;
+          font-weight: 500;
+        }
+      }
+    }
+    .game-info {
+      position: absolute;
+      top: calc(50% - 1.5px);
+      width: 80px;
+      padding-bottom: calc(80px / 320 * 104);
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+      right: 7px;
+      &:hover {
+        cursor: pointer;
       }
     }
   }
@@ -34,21 +89,6 @@
     z-index: 10;
     @media (min-width: 576px) {
       height: 60px;
-    }
-  }
-
-  .logo {
-    position: absolute;
-    top: 0;
-    width: 80px;
-    padding-bottom: calc(80px / 700 * 400);
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    margin-left: 10px;
-    z-index: 11;
-
-    @media (min-width: 576px) {
-      width: 100px;
     }
   }
 }
