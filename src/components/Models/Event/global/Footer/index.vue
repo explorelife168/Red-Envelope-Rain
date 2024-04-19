@@ -1,18 +1,17 @@
 <template>
-  <!-- <div class="footer-container"> -->
   <div
     class="footer-cloud"
     :style="{
       'background-image': `url(${footer_cloud})`
     }"
-  ></div>
-  <div
-    class="footer-red-envelope"
-    :style="{
-      'background-image': `url(${footer_red_envelope})`
-    }"
-  ></div>
-  <!-- </div> -->
+  >
+    <div
+      class="footer-red-envelope"
+      :style="{
+        'background-image': `url(${footer_red_envelope})`
+      }"
+    ></div>
+  </div>
 </template>
 
 <script setup lang="ts">

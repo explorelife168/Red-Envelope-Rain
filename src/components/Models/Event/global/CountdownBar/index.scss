@@ -30,18 +30,28 @@
     transform: translateY(-50%);
     top: 50%;
     color: var(--countdown-text-color);
-    @media (min-width: 576px) {
-      font-size: 1rem;
+
+    @media (min-width: 375px) {
+      font-size: 0.65rem;
     }
-    @media (max-width: 480px) {
+    @media (min-width: 480px) {
       font-size: 0.8rem;
     }
-    @media (max-width: 375px) {
-      font-size: 0.65rem;
+    @media (min-width: 576px) {
+      font-size: 0.9rem;
     }
     .high-light {
       color: var(--countdown-high-light-text-color);
       font-weight: bold;
+      @media (mib-width: 375px) {
+        font-size: 0.8rem;
+      }
+      @media (min-width: 480px) {
+        font-size: 0.9rem;
+      }
+      @media (min-width: 576px) {
+        font-size: 1.1rem;
+      }
     }
   }
 }

@@ -1,21 +1,22 @@
 .footer-cloud {
   position: relative;
   left: 50%;
-  bottom: 49%;
   width: 100%;
   padding-bottom: calc(100% / 1500 * 420);
   background-size: 100% auto;
   background-repeat: no-repeat;
   transform: translateX(-50%);
-}
-.footer-red-envelope {
-  // background-color: var(--test-color-2);
-  position: relative;
-  left: 50%;
-  bottom: 66%;
-  width: 100%;
-  padding-bottom: calc(100% / 1500 * 480);
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  transform: translateX(-50%);
+  // z-index: 4;
+
+  .footer-red-envelope {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    padding-bottom: calc(100% / 1500 * 480);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+    // z-index: 1;
+  }
 }

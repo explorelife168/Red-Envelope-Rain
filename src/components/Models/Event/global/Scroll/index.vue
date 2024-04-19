@@ -28,16 +28,17 @@
       </div>
       <div class="award-title" :style="{ 'background-image': `url(${award_title})` }"></div>
       <div class="award" :style="{ 'background-image': `url(${award})` }"></div>
-      <div class="game-start-btn" :style="{ 'background-image': `url(${game_start_btn})` }">
+      <!-- <div class="game-start-btn" :style="{ 'background-image': `url(${game_start_btn})` }">
         <div class="start-text" v-text="'開始遊戲'"></div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 import award from '@/assets/images/award.png'
 import award_title from '@/assets/images/award_title.png'
-import game_start_btn from '@/assets/images/game_btn.png'
+// import game_start_btn from '@/assets/images/game_btn.png'
 import rank_1 from '@/assets/images/rank_1.png'
 import rank_2 from '@/assets/images/rank_2.png'
 import rank_3 from '@/assets/images/rank_3.png'
