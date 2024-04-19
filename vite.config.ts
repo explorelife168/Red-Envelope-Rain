@@ -7,7 +7,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [vue(), vueJsx()],
   // 靜態部署使用
-  base: '/',
+  base: '/Red-Envelope-Rain/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
