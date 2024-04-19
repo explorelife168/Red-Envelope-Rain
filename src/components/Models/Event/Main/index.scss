@@ -2,9 +2,14 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  overflow: scroll;
 
   @media (min-width: 576px) {
     margin: 0 auto;
     width: 576px;
   }
+}
+::-webkit-scrollbar {
+  width: 0; /* 设置滚动条宽度为0 */
+  background: transparent; /* 设置滚动条背景为透明 */
 }

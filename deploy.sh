@@ -15,6 +15,8 @@ cd dist
 git init
 git add -A
 git commit -m 'deploy'
+
+
 git push -f https://github.com/explorelife168/Red-Envelope-Rain.git master:gh-pages
 # git push -f git@github.com:explorelife168/SurfStore.git master:gh-pages
 
