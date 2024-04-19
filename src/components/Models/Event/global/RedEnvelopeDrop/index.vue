@@ -12,7 +12,7 @@ const app = ref<RedEnvelopeDropCanvasClass | undefined>(undefined)
 
 onMounted(() => {
   app.value = new RedEnvelopeDropCanvasClass()
-  // app.value.play()
+  app.value.play()
 })
 </script>
 
