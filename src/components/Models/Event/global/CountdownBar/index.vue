@@ -26,9 +26,9 @@
 </template>
 
 <script setup lang="ts">
-import countdown_bar from '@/assets/images/countdown_bar.png'
-import countdown_bg from '@/assets/images/countdown_bg.png'
-import countdown_cover from '@/assets/images/countdown_cover.png'
+import countdown_bar from '@/assets/images/countdown_bar.webp'
+import countdown_bg from '@/assets/images/countdown_bg.webp'
+import countdown_cover from '@/assets/images/countdown_cover.webp'
 import { useCounterStore } from '@/stores/counter'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 

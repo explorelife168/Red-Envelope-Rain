@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import game_start_btn from '@/assets/images/game_btn.png'
+import game_start_btn from '@/assets/images/game_btn.webp'
 </script>
 <style scoped lang="scss">
 @import './index.scss';

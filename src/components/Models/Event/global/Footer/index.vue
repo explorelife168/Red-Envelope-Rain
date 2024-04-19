@@ -15,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import footer_cloud from '@/assets/images/footer_1.png'
-import footer_red_envelope from '@/assets/images/footer_2.png'
+import footer_cloud from '@/assets/images/footer_1.webp'
+import footer_red_envelope from '@/assets/images/footer_2.webp'
 </script>
 <style scoped lang="scss">
 @import './index.scss';

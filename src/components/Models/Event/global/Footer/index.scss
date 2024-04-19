@@ -2,11 +2,11 @@
   position: relative;
   left: 50%;
   width: 100%;
+  margin-top: 14%;
   padding-bottom: calc(100% / 1500 * 420);
   background-size: 100% auto;
   background-repeat: no-repeat;
   transform: translateX(-50%);
-  // z-index: 4;
 
   .footer-red-envelope {
     position: absolute;
@@ -17,6 +17,5 @@
     background-size: 100% auto;
     background-repeat: no-repeat;
     transform: translateX(-50%);
-    // z-index: 1;
   }
 }

@@ -2,9 +2,7 @@
   position: relative;
   width: 100%;
   margin-top: 2.5%;
-  // background-color: var(--test-color-2);
   margin-bottom: -27%;
-  // z-index: 3;
 
   // scroll-top
   .scroll-top {
@@ -103,12 +101,14 @@
       }
     }
   }
+
   // scroll-paper
   .scroll-paper {
     position: relative;
     top: 0%;
     left: 50%;
     width: 74%;
+
     padding-bottom: calc(74% / 1112 * 1696);
     background-size: 100% auto;
     background-repeat: no-repeat;
@@ -249,31 +249,5 @@
       background-repeat: no-repeat;
       transform: translateX(-50%);
     }
-    // .game-start-btn {
-    //   position: absolute;
-    //   left: 50%;
-    //   bottom: 5%;
-    //   width: 57%;
-    //   padding-bottom: calc(57% / 640 * 182);
-    //   background-size: 100% auto;
-    //   background-repeat: no-repeat;
-    //   transform: translateX(-50%);
-    //   // z-index: 5;
-    //   &:hover {
-    //     cursor: pointer;
-    //   }
-    //   .start-text {
-    //     position: absolute;
-    //     width: 100%;
-    //     top: 50%;
-    //     text-align: center;
-    //     font-size: 16px;
-    //     letter-spacing: 1.5px;
-    //     font-weight: 600;
-    //     font-family: 'PingFang SC', sans-serif;
-    //     color: var(--game-start-btn-color);
-    //     transform: translateY(-50%);
-    //   }
-    // }
   }
 }

@@ -28,9 +28,9 @@
 </template>
 
 <script setup lang="ts">
-import game_info from '@/assets/images/game_info.png'
-import user_icon from '@/assets/images/user_icon.png'
-import logo from '@/assets/logo/logo.png'
+import game_info from '@/assets/images/game_info.webp'
+import user_icon from '@/assets/images/user_icon.webp'
+import logo from '@/assets/logo/logo.webp'
 </script>
 <style scoped lang="scss">
 @import './index.scss';

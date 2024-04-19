@@ -1,4 +1,4 @@
-import drop_envelope_red from '@/assets/images/drop_envelope_red.png'
+import drop_envelope_red from '@/assets/images/drop_envelope_red.webp'
 import gsap from 'gsap'
 import { debounce, random } from 'lodash'
 import * as PIXI from 'pixi.js'

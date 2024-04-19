@@ -28,23 +28,20 @@
       </div>
       <div class="award-title" :style="{ 'background-image': `url(${award_title})` }"></div>
       <div class="award" :style="{ 'background-image': `url(${award})` }"></div>
-      <!-- <div class="game-start-btn" :style="{ 'background-image': `url(${game_start_btn})` }">
-        <div class="start-text" v-text="'開始遊戲'"></div>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import award from '@/assets/images/award.png'
-import award_title from '@/assets/images/award_title.png'
-// import game_start_btn from '@/assets/images/game_btn.png'
-import rank_1 from '@/assets/images/rank_1.png'
-import rank_2 from '@/assets/images/rank_2.png'
-import rank_3 from '@/assets/images/rank_3.png'
-import refresh from '@/assets/images/refresh.png'
-import scroll_top from '@/assets/images/scroll_bg.png'
-import scroll_paper from '@/assets/images/scroll_paper_bg.png'
+import award from '@/assets/images/award.webp'
+import award_title from '@/assets/images/award_title.webp'
+// import game_start_btn from '@/assets/images/game_btn.webp'
+import rank_1 from '@/assets/images/rank_1.webp'
+import rank_2 from '@/assets/images/rank_2.webp'
+import rank_3 from '@/assets/images/rank_3.webp'
+import refresh from '@/assets/images/refresh.webp'
+import scroll_top from '@/assets/images/scroll_bg.webp'
+import scroll_paper from '@/assets/images/scroll_paper_bg.webp'
 import { ref } from 'vue'
 
 const ranks = ref([

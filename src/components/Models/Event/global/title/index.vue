@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import activity_title from '@/assets/images/activity_title.png'
+import activity_title from '@/assets/images/activity_title.webp'
 </script>
 <style scoped lang="scss">
 @import './index.scss';
