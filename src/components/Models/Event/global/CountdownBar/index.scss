@@ -5,17 +5,16 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   transform: translateX(-50%);
-  border-radius: 20px;
   left: 50%;
   overflow: hidden;
 
   .countdown-bar-blood {
     position: absolute;
-    width: 4%;
     height: 100%;
     right: 0;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    border-radius: 20px;
   }
   .countdown-bar-cover {
     position: absolute;
@@ -44,7 +43,7 @@
     .high-light {
       color: var(--countdown-high-light-text-color);
       font-weight: bold;
-      @media (mib-width: 375px) {
+      @media (min-width: 375px) {
         font-size: 0.8rem;
       }
       @media (min-width: 480px) {
