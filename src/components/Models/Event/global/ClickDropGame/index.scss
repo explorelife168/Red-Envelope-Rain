@@ -5,7 +5,7 @@
   background-size: 100% auto;
   background-repeat: no-repeat;
 
-  // 時鐘區塊
+  /* 時鐘區塊*/
   .bg-game-clock {
     position: absolute;
     top: 15px;
@@ -62,16 +62,18 @@
       background-size: 100% 100%;
       background-repeat: no-repeat;
       transform: translateX(-50%);
+      border-radius: 20px;
       overflow: hidden;
 
       .game-countdown-bar-blood {
         position: absolute;
-        width: 100%;
+        // width: 2%;
         height: 100%;
         right: 0;
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        border-radius: 20px;
+
+        transition: width 1s linear;
       }
       .game-countdown-bar-cover {
         position: absolute;
@@ -83,7 +85,7 @@
     }
   }
 
-  //遊戲開始倒數
+  /* 遊戲開始倒數*/
   .ready-start-game {
     position: absolute;
     width: 100%;
@@ -96,7 +98,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     .here-we-go {
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
 

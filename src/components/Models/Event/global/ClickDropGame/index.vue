@@ -12,10 +12,13 @@
         'background-image': `url(${clock})`
       }"
     >
-      <div class="time-count"><span class="time">30</span> 秒</div>
-
+      <!-- 時間倒數數字 -->
+      <div class="time-count">
+        <span class="time">{{ gameAfterCountDownValue }}</span> 秒
+      </div>
+      <!-- 分數 -->
       <div class="score" v-text="'888'"></div>
-
+      <!-- 血條倒數 -->
       <div
         class="game-countdown-bar-container"
         :style="{
@@ -24,7 +27,10 @@
       >
         <div
           class="game-countdown-bar-blood"
-          :style="{ 'background-image': `url(${game_countdown_bar})` }"
+          :style="{
+            width: `${progress}%`,
+            'background-image': `url(${game_countdown_bar})`
+          }"
         ></div>
 
         <div
@@ -37,11 +43,11 @@
     </div>
 
     <!-- 遊戲開始倒數 -->
-    <div class="ready-start-game" v-if="countDownGameStartValue > -1">
-      <span v-if="countDownGameStartValue > 0">{{ countDownGameStartValue }}</span>
-      <span class="here-we-go" v-if="!countDownGameStartValue">{{ '遊戲開始' }}</span>
+    <div class="ready-start-game" v-if="gameStartBeforeCountDownValue > -1">
+      <span v-if="gameStartBeforeCountDownValue > 0">{{ gameStartBeforeCountDownValue }}</span>
+      <span class="here-we-go" v-if="!gameStartBeforeCountDownValue">{{ '遊戲開始' }}</span>
     </div>
-    {{ countDownGameStartValue }}
+
     <!-- 底部雲 -->
     <div
       class="bg-game-footer"
@@ -58,23 +64,60 @@ import clock from '@/assets/images/clock.webp'
 import game_countdown_bar from '@/assets/images/countdown_bar.webp'
 import game_countdown_bg from '@/assets/images/countdown_bg.webp'
 import game_countdown_cover from '@/assets/images/countdown_cover.webp'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
-const countDownGameStartValue = ref(3)
+//遊戲三秒倒數
+const gameStartBeforeCountDownValue = ref(3)
 
-const countDownController = () => {
-  if (countDownGameStartValue.value > -1) {
-    countDownGameStartValue.value -= 1
+const gameStartBeforeCountDownController = () => {
+  if (gameStartBeforeCountDownValue.value > -1) {
+    gameStartBeforeCountDownValue.value -= 1
   }
 }
-const timer = setInterval(countDownController, 1000)
+const beforeGameInterval = () => {
+  let beforeInterval
+  if (gameStartBeforeCountDownValue.value > 0) {
+    beforeInterval = setInterval(gameStartBeforeCountDownController, 1000)
+  } else {
+    clearInterval(beforeInterval)
+  }
+}
+
+// 遊戲開始三十秒倒數
+const gameAfterCountDownValue = ref(30)
+
+const gameStartAfterCountDownController = () => {
+  if (gameAfterCountDownValue.value > 0) {
+    gameAfterCountDownValue.value -= 1
+  }
+}
+
+const AfterGameInterval = () => {
+  let AfterInterval
+  let AfterProgress
+  if (gameAfterCountDownValue.value > 0) {
+    AfterInterval = setInterval(gameStartAfterCountDownController, 1000)
+    AfterProgress = setInterval(progressPercentage, 1000)
+  } else {
+    clearInterval(AfterInterval)
+    clearInterval(AfterProgress)
+  }
+}
+
+// 扣血條
+const progress = ref(100)
+const progressPercentage = () => {
+  progress.value = (gameAfterCountDownValue.value / 30) * 100
+}
+
+watch(gameStartBeforeCountDownValue, (newVal) => {
+  if (newVal === -1) {
+    AfterGameInterval()
+  }
+})
 
 onMounted(() => {
-  if (!countDownGameStartValue.value) {
-    clearInterval(timer)
-  } else {
-    timer
-  }
+  beforeGameInterval()
 })
 </script>
 
