@@ -1,10 +1,11 @@
 .bg-game-mobile {
   position: relative;
-  // top: 0;
   width: 100%;
   height: 100vh;
   background-size: 100% auto;
   background-repeat: no-repeat;
+
+  // 時鐘區塊
   .bg-game-clock {
     position: absolute;
     top: 15px;
@@ -44,7 +45,6 @@
       width: 100%;
       bottom: 15%;
       text-align: center;
-      background-color: var(--test-color-2);
       background: var(--countdown-bar-text-1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -82,6 +82,25 @@
       }
     }
   }
+
+  //遊戲開始倒數
+  .ready-start-game {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30%;
+    font:
+      600 9rem 'PingFang SC',
+      sans-serif;
+    background: var(--countdown-bar-text-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    .here-we-go {
+      font-size: 5rem;
+    }
+  }
+
+  // 底部雲
   .bg-game-footer {
     position: absolute;
     bottom: 0%;

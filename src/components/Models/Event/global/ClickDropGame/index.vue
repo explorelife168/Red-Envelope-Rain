@@ -5,6 +5,7 @@
       'background-image': `url(${bg_m})`
     }"
   >
+    <!-- 時鐘區塊 -->
     <div
       class="bg-game-clock"
       :style="{
@@ -34,6 +35,14 @@
         ></div>
       </div>
     </div>
+
+    <!-- 遊戲開始倒數 -->
+    <div class="ready-start-game" v-if="countDownGameStartValue > -1">
+      <span v-if="countDownGameStartValue > 0">{{ countDownGameStartValue }}</span>
+      <span class="here-we-go" v-if="!countDownGameStartValue">{{ '遊戲開始' }}</span>
+    </div>
+    {{ countDownGameStartValue }}
+    <!-- 底部雲 -->
     <div
       class="bg-game-footer"
       :style="{
@@ -49,6 +58,24 @@ import clock from '@/assets/images/clock.webp'
 import game_countdown_bar from '@/assets/images/countdown_bar.webp'
 import game_countdown_bg from '@/assets/images/countdown_bg.webp'
 import game_countdown_cover from '@/assets/images/countdown_cover.webp'
+import { onMounted, ref } from 'vue'
+
+const countDownGameStartValue = ref(3)
+
+const countDownController = () => {
+  if (countDownGameStartValue.value > -1) {
+    countDownGameStartValue.value -= 1
+  }
+}
+const timer = setInterval(countDownController, 1000)
+
+onMounted(() => {
+  if (!countDownGameStartValue.value) {
+    clearInterval(timer)
+  } else {
+    timer
+  }
+})
 </script>
 
 <style scoped lang="scss">
