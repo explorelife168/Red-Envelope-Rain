@@ -2,13 +2,14 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
 export const useCounterStore = defineStore('counter', () => {
+  // status
   const countDownName = ref('活動時間剩下')
   const gameStartTime = ref('2024-03-30T00:00:00')
   const gameEndTime = ref('2024-04-30T00:00:00')
+  const gameSwitchStatus = ref(false)
 
-  const gettersCountDownName = computed(() => {
-    return countDownName.value
-  })
+  // getter
+  const gettersCountDownName = computed(() => countDownName.value)
 
   const gettersConvertGameStartTime = computed(() => {
     const convertStartTime = new Date(gameStartTime.value).getTime()
@@ -19,12 +20,23 @@ export const useCounterStore = defineStore('counter', () => {
     const convertEndTime = new Date(gameEndTime.value).getTime()
     return convertEndTime
   })
+
+  const gettersGameSwitchStatus = computed(() => gameSwitchStatus.value)
+
+  // action
+  const actionsGameSwitchStatusController = () => {
+    return (gameSwitchStatus.value = !gameSwitchStatus.value)
+  }
+
   return {
     countDownName,
     gameStartTime,
     gameEndTime,
+    gettersGameSwitchStatus,
+
     gettersCountDownName,
     gettersConvertGameStartTime,
-    gettersConvertGameEndTime
+    gettersConvertGameEndTime,
+    actionsGameSwitchStatusController
   }
 })

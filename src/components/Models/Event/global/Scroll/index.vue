@@ -35,7 +35,6 @@
 <script setup lang="ts">
 import award from '@/assets/images/award.webp'
 import award_title from '@/assets/images/award_title.webp'
-// import game_start_btn from '@/assets/images/game_btn.webp'
 import rank_1 from '@/assets/images/rank_1.webp'
 import rank_2 from '@/assets/images/rank_2.webp'
 import rank_3 from '@/assets/images/rank_3.webp'
