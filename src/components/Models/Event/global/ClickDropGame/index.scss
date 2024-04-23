@@ -1,9 +1,93 @@
-.bg-mobile {
-  position: absolute;
-  top: 0;
+.bg-game-mobile {
+  position: relative;
+  // top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-size: 100% auto;
   background-repeat: no-repeat;
-  // background-position: center;
+  .bg-game-clock {
+    position: absolute;
+    top: 15px;
+    width: 60%;
+    left: 50%;
+    padding-bottom: calc(60% / 928 * 712);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+    @media (min-width: 480px) {
+      width: 45%;
+      padding-bottom: calc(45% / 928 * 712);
+    }
+    .time-count {
+      position: absolute;
+      width: 100%;
+      top: 18%;
+      text-align: center;
+      font:
+        600 1.145rem 'PingFang SC',
+        sans-serif;
+      background: var(--countdown-bar-text-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @media (min-width: 480px) {
+        top: 20%;
+      }
+      .time {
+        font-size: 1.875rem;
+      }
+    }
+    .score {
+      position: absolute;
+      font:
+        600 1.875rem 'PingFang SC',
+        sans-serif;
+      width: 100%;
+      bottom: 15%;
+      text-align: center;
+      background-color: var(--test-color-2);
+      background: var(--countdown-bar-text-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @media (min-width: 480px) {
+        bottom: 17%;
+      }
+    }
+
+    .game-countdown-bar-container {
+      position: absolute;
+      width: 150%;
+      top: 42%;
+      left: 50%;
+      padding-bottom: calc(150% / 2000 * 180);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      transform: translateX(-50%);
+      overflow: hidden;
+
+      .game-countdown-bar-blood {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        right: 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+      }
+      .game-countdown-bar-cover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .bg-game-footer {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    padding-bottom: calc(100% / 1500 * 560);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
 }
