@@ -1,13 +1,12 @@
-.envelope-drop {
+.envelope-drop-game {
   position: fixed;
-  pointer-events: none;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 13;
 
-  .envelope-drop-canvas {
+  .envelope-drop-game-canvas {
     position: fixed;
     width: 100%;
     height: 100%;

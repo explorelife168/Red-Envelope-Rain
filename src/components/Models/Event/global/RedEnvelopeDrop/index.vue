@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { RedEnvelopeDropCanvasClass } from '../../animation/RedEnvelopeDrop/index'
+import { RedEnvelopeDropCanvasClass } from '../../animation/RedEnvelopeDropAnimation/index'
 
 const app = ref<RedEnvelopeDropCanvasClass | undefined>(undefined)
 
