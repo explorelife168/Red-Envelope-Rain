@@ -45,8 +45,32 @@ class RedEnvelopeDropGameCanvasClass {
     redEnvelope.buttonMode = true
     redEnvelope.interactive = true
 
+    const RedScoreTextStyle = new PIXI.TextStyle({
+      fontFamily: 'Arial',
+      fontSize: 24,
+      fontStyle: 'italic',
+      fontWeight: 'bold',
+      fill: '#ffffff',
+      stroke: '#4a1850'
+    })
+
+    const RedScoreText = new PIXI.Text('+10 point', RedScoreTextStyle)
+
+    RedScoreText.position.set(redEnvelope.x, redEnvelope.y)
+    // RedScoreText.anchor.set(0.5)
+    RedScoreText.alpha = 0
+
     redEnvelope.on('pointerdown', () => {
+      RedScoreText.position.set(redEnvelope.x, redEnvelope.y)
+      this.app.stage.addChild(RedScoreText)
       this.app.stage.removeChild(redEnvelope)
+      gsap.to(RedScoreText, {
+        alpha: 1,
+        duration: 0.3,
+        onComplete: () => {
+          this.app.stage.removeChild(RedScoreText)
+        }
+      })
     })
 
     gsap.to(redEnvelope, {
@@ -56,7 +80,9 @@ class RedEnvelopeDropGameCanvasClass {
       duration: random(4, 7),
       ease: 'linear',
       onComplete: () => {
+        redEnvelope.off('pointerdown')
         this.app.stage.removeChild(redEnvelope)
+        this.app.stage.removeChild(RedScoreText)
       }
     })
   }
