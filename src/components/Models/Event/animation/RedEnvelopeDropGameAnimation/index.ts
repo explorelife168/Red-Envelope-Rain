@@ -45,8 +45,7 @@ class RedEnvelopeDropGameCanvasClass {
     redEnvelope.buttonMode = true
     redEnvelope.interactive = true
 
-    redEnvelope.on('mousedown', () => {
-      console.log('123')
+    redEnvelope.on('click', () => {
       this.app.stage.removeChild(redEnvelope)
     })
 
