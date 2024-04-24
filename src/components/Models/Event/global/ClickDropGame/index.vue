@@ -68,6 +68,7 @@ import { onMounted, ref, watch } from 'vue'
 
 //遊戲三秒倒數
 const gameStartBeforeCountDownValue = ref(3)
+const beforeInterval = ref()
 
 const gameStartBeforeCountDownController = () => {
   if (gameStartBeforeCountDownValue.value > -1) {
@@ -75,16 +76,16 @@ const gameStartBeforeCountDownController = () => {
   }
 }
 const beforeGameInterval = () => {
-  let beforeInterval
   if (gameStartBeforeCountDownValue.value > 0) {
-    beforeInterval = setInterval(gameStartBeforeCountDownController, 1000)
+    beforeInterval.value = setInterval(gameStartBeforeCountDownController, 1000)
   } else {
-    clearInterval(beforeInterval)
+    clearInterval(beforeInterval.value)
   }
 }
 
 // 遊戲開始三十秒倒數
 const gameAfterCountDownValue = ref(30)
+const AfterInterval = ref()
 
 const gameStartAfterCountDownController = () => {
   if (gameAfterCountDownValue.value > 0) {
@@ -93,19 +94,20 @@ const gameStartAfterCountDownController = () => {
 }
 
 const AfterGameInterval = () => {
-  let AfterInterval
-  let AfterProgress
   if (gameAfterCountDownValue.value > 0) {
-    AfterInterval = setInterval(gameStartAfterCountDownController, 1000)
-    AfterProgress = setInterval(progressPercentage, 1000)
+    AfterInterval.value = setInterval(gameStartAfterCountDownController, 1000)
+    progressInterval.value = setInterval(progressPercentage, 1000)
   } else {
-    clearInterval(AfterInterval)
-    clearInterval(AfterProgress)
+    clearInterval(AfterInterval.value)
+    clearInterval(progressInterval.value)
+    console.log(progress.value)
   }
 }
 
 // 扣血條
 const progress = ref(100)
+const progressInterval = ref()
+
 const progressPercentage = () => {
   progress.value = (gameAfterCountDownValue.value / 30) * 100
 }
