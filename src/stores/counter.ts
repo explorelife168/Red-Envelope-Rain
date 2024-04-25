@@ -7,6 +7,7 @@ export const useCounterStore = defineStore('counter', () => {
   const gameStartTime = ref('2024-03-30T00:00:00')
   const gameEndTime = ref('2024-04-30T00:00:00')
   const gameSwitchStatus = ref(false)
+  const gameScore = ref(0)
 
   // getter
   const gettersCountDownName = computed(() => countDownName.value)
@@ -23,9 +24,15 @@ export const useCounterStore = defineStore('counter', () => {
 
   const gettersGameSwitchStatus = computed(() => gameSwitchStatus.value)
 
+  const getterGameScoreController = computed(() => gameScore.value)
+
   // action
   const actionsGameSwitchStatusController = () => {
     return (gameSwitchStatus.value = !gameSwitchStatus.value)
+  }
+
+  const actionGameScoreController = (val: number) => {
+    gameScore.value = val
   }
 
   return {
@@ -33,10 +40,12 @@ export const useCounterStore = defineStore('counter', () => {
     gameStartTime,
     gameEndTime,
     gettersGameSwitchStatus,
+    getterGameScoreController,
 
     gettersCountDownName,
     gettersConvertGameStartTime,
     gettersConvertGameEndTime,
-    actionsGameSwitchStatusController
+    actionsGameSwitchStatusController,
+    actionGameScoreController
   }
 })

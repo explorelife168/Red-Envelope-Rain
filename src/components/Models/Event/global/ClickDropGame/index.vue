@@ -17,7 +17,7 @@
         <span class="time">{{ gameAfterCountDownValue }}</span> 秒
       </div>
       <!-- 分數 -->
-      <div class="score" v-text="'888'"></div>
+      <div class="score" v-text="`${score}`"></div>
 
       <!-- 血條倒數 -->
       <div
@@ -66,8 +66,12 @@ import clock from '@/assets/images/clock.webp'
 import game_countdown_bar from '@/assets/images/countdown_bar.webp'
 import game_countdown_bg from '@/assets/images/countdown_bg.webp'
 import game_countdown_cover from '@/assets/images/countdown_cover.webp'
-import { onMounted, ref, watch } from 'vue'
+import { useCounterStore } from '@/stores/counter'
+import { computed, onMounted, ref, watch } from 'vue'
 import RedEnvelopeDropGame from '../RedEnvelopeDropGame/index.vue'
+
+const useStore = useCounterStore()
+const score = computed(() => useStore.getterGameScoreController)
 
 //遊戲三秒倒數
 const gameStartBeforeCountDownValue = ref(3)
